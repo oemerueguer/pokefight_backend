@@ -2,6 +2,10 @@ const express = require("express");
 const pokemonRouter = express.Router();
 const data = require("../pokedex.json");
 
+pokemonRouter.get("/", (req, res) => {
+  res.send("Welcome to our Pokemon API");
+});
+
 pokemonRouter.get("/pokemon", (req, res) => {
   res.status(200).json(data);
 });
